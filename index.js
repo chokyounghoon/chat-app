@@ -1,13 +1,14 @@
 const {createServer} = require('http');
 const app = require('./app');
-const {server} = require('socket.io');
+const {Server} = require('socket.io');
 require('dotenv').config();
 
 const httpserver = createServer(app);
 
 const io = new Server(httpserver, {
+
     cors: {
-        origin: 'localhost:3000',
+        origin: 'http://localhost:3000',
     }
 });
 
