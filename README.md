@@ -30,11 +30,5 @@ Wrote to /Users/khcho/workspace/chatapp-be-student/package.json:
 
 
 
-2.설치포르그램
-(base) khcho@jokers-iMac chatapp-be-student % npm i express, mongoose, cors dotenvv http;  
-
-express: 서버
-mongoose : 몽고DB라이브러리
-cors : 백엔드 프론트 연결 수월 하게 함
-dotenv : 설치한 환경변수 가져올 라이브러리
-http: http서버, 웹소켓 올릴용
+2.설치 프로르그램
+npm i express mongoose cors dotenv http;  
