@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const roomSchema = new mongoose.Schema(
   {
-    room: String, 
+    room: String,
     members: [
       {
         type: mongoose.Schema.ObjectId,
@@ -13,7 +13,5 @@ const roomSchema = new mongoose.Schema(
   },
   { timestamp: true }
 );
+module.exports = mongoose.model("Room", roomSchema);
 
-const Room = mongoose.model('Room', roomSchema);
-
-module.exports = Room;

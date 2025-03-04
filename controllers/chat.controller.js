@@ -3,19 +3,17 @@ const mongoose = require('mongoose');
 
 const chatController = {};
 
-chatController.saveChat = async (user, message) => {
- 
-
-    const chat = new Chat({
-        chat: message,
-        user: {
-            id: user._id,
-            name: user.name
-        }
+chatController.saveChat = async (message, user) => {
+    const newChat = new Chat({
+      chat: message,
+      user: {
+        id: user._id,
+        name: user.name,
+      },
+      room: user.room, // 메세지에 채팅방 정보도 저장하는 부분 추가! 
     });
-
-    await chat.save();
-    return chat;
-};
+    await newChat.save();
+    return newChat;
+  };
 
 module.exports = chatController;
