@@ -1,14 +1,12 @@
 const mongoose = require('mongoose');
 
-
 const chatSchema = new mongoose.Schema(
     {
-        chat :  String,
+        chat: String,
         user: {
-     
             id: {
                 type: mongoose.Schema.Types.ObjectId,
-                required
+                required: true // required 속성에 true 값을 설정
             },
             name: {
                 type: String,
@@ -18,7 +16,8 @@ const chatSchema = new mongoose.Schema(
     {
         timestamps: true    
     }
-
 );
 
-module.exports = mongoose.model('Chat', chatSchema);
+const Chat = mongoose.model('Chat', chatSchema);
+
+module.exports = Chat;
