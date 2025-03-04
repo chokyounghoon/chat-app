@@ -3,11 +3,13 @@ const { disconnect } = require("mongoose");
 const userController = require('../controllers/user.controller');
 const user = require("../Models/user");
 const chatController = require("../controllers/chat.controller");
-
+const roomController = require("../controllers/room.controller");
+ 
 module.exports = function (io) {  
-    //듣기
+    //듣기sss
     io.on('connection', async(socket) => {
         console.log('user connected', socket.id);
+        socket.emit("rooms", await roomController.getAllRooms()); // 룸 리스트 보내기
     
         socket.on(disconnect, () => {
             console.log('user disconnected', socket.id);
